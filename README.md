@@ -1,7 +1,9 @@
 ![Language](https://img.shields.io/badge/Language-Python-orange.svg?logo=Python&logoColor=yellow) ![Update](https://img.shields.io/badge/Update-Weekly-green.svg) ![Progress](https://img.shields.io/badge/progress-N%2F1049-brightgreen.svg) ![Sponsors](https://img.shields.io/badge/Sponsor-0-lightgrey.svg)
 
 # Python solution for Leetcode
-Python solution of problems from [LeetCode](https://leetcode.com/).
+* 先看: https://blog.algomooc.com/ (https://github.com/MisterBooo/LeetCodeAnimation)
+* 结合本repository看python实现:
+* Python solution of problems from [LeetCode](https://leetcode.com/).
 
 ##### [Extra Algorithms](./Extra/)
 | # | Title | Solution |
