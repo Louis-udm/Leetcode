@@ -321,8 +321,10 @@ Python solution of problems from [LeetCode](https://leetcode.com/).
 |14|[Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix)|[Python](./1-100q/14.py)|Easy|
 |11|[Container With Most Water](https://leetcode.com/problems/container-with-most-water/)| [Python](./1-100q/11.py)|Medium|
 |10|[Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)| [Python](./1-100q/10.py)|Hard|
+|9|[判断一个整数是否是回文数]()| [Python](./1-100q/09.py)||
 |6|[ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/)| [Python](./1-100q/06.py)|Easy|
 |5|[Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)| [Python](./1-100q/05.py)|Medium|
 |4|[Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)| [Python](./1-100q/4.py)|Hard|
 |3|[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)| [Python](./1-100q/03.py)|Medium|
+|2|[两数相加]()| [Python](./1-100q/02.py)||
 |1|[Two Sum](https://leetcode.com/problems/two-sum/)| [Python](./1-100q/01_TwoSum.py)|Medium|
