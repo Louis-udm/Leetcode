@@ -31,3 +31,6 @@ Given an array of integers, return indices of the two numbers such that they add
 
 * [NO.53](./1-100q/53.py) 对应[剑指 Offer 42. 连续子数组的最大和](https://blog.algomooc.com/042.html#%E4%B8%80%E3%80%81%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0)
 * ![NO.53](https://camo.githubusercontent.com/4d78fd6ac2ffe9559d2188efb0dd57a95f5aeb3c831653ce186777eb5ed298b9/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f76786137662e676966)
+
+* [Palindrome](./Extra/palindrome.py) 
+Palindrome: word, phrase, or sequence that reads the same backward as forward, e.g., madam or nursesrun. Given a string, find the longest substring which is palindrome. For example, if the given string is “isevilolivealive”, the output should be “evilolive”.

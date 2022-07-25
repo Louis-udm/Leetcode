@@ -49,19 +49,24 @@
 - 再将 22 取出来继续比较
 """
 
-def is_palindrome_int(num:int):
-    l=len(str(num))
-    i=1
+
+def is_palindrome_int(num: int) -> bool:
+    i = 1
+    l = len(str(num))
     while True:
-        num=(num%10**(l-i+1))//10**(i-1)
-        l=len(str(num))
-        if num//10**(l-1)!=num%10:
+        num = (num % 10 ** (l - i + 1)) // 10 ** (i - 1)
+        l = len(str(num))
+        if num // 10 ** (l - 1) != num % 10:
             return False
-        if l<=1: 
+        if l <= 1:
             return True
-        i+=1
-    return True
+        i += 1
+
 
 print(is_palindrome_int(12353721))
 print(is_palindrome_int(1235321))
 print(is_palindrome_int(123321))
+print(is_palindrome_int(131))
+print(is_palindrome_int(131))
+print(is_palindrome_int(11))
+print(is_palindrome_int(1))
