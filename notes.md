@@ -1,5 +1,6 @@
 # Notice
-* 先看, 有动画和解题思路: https://blog.algomooc.com/ (https://github.com/MisterBooo/LeetCodeAnimation)
+* 先看, 有动画和解题思路: https://blog.algomooc.com/(但是题目不完全同leetcode对应) 
+* java leetcode中文 https://github.com/MisterBooo/LeetCodeAnimation
 * 结合本repository看python实现: Python solution of problems from [LeetCode](https://leetcode.com/).
   
 # 其他python相关leetcode资源:
@@ -30,7 +31,20 @@ Given an array of integers, return indices of the two numbers such that they add
 ![](https://blog-1257126549.cos.ap-guangzhou.myqcloud.com/blog/v3tkl.gif)
 
 * [NO.53](./1-100q/53.py) 对应[剑指 Offer 42. 连续子数组的最大和](https://blog.algomooc.com/042.html#%E4%B8%80%E3%80%81%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0)
-* ![NO.53](https://camo.githubusercontent.com/4d78fd6ac2ffe9559d2188efb0dd57a95f5aeb3c831653ce186777eb5ed298b9/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f76786137662e676966)
+![NO.53](https://camo.githubusercontent.com/4d78fd6ac2ffe9559d2188efb0dd57a95f5aeb3c831653ce186777eb5ed298b9/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f76786137662e676966)
 
 * [Palindrome](./Extra/palindrome.py) 
 Palindrome: word, phrase, or sequence that reads the same backward as forward, e.g., madam or nursesrun. Given a string, find the longest substring which is palindrome. For example, if the given string is “isevilolivealive”, the output should be “evilolive”.
+
+* [Max pair](./Extra/max_pair.py) 
+return the number that it's the maximun pair in the array.
+[1, 2, -3,3,2,-2 -4] -> 3, because 3 and -3 are max pair in the array.
+
+* [Mini remove](./Extra/minimum_remove.py) 
+There is an array A of N integers sorted in non-decreasing order. in one move, you can either remove an integer from A or insert an integerbefore or after any element of A. The goal is to achieve an array in which all values X that are present in the array occur exactly X times.The function should return the minimum number of moves after which every value X in the array occurs exactly X times. Note that it's permissible to remove some values entirely, if appropriate.
+
+* [implement power function.](./Extra/pow.py) 
+Implement power function only using +-*/
+
+* [bracket](./Extra/bracket.py) 
+Match the parentheses.
