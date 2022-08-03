@@ -61,7 +61,7 @@ print(pow(3, 20))  # 3486784401
 
 
 def s1():
-    pow1(3, 200)
+    pow_vanila(3, 200)
 
 
 def s2():
