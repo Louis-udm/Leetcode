@@ -12,8 +12,8 @@
 # 2^7 = 2*2*2*2*2*2*2
 
 
-def pow1(a, b):
-    # algo1
+def pow_vanila(a, b):
+    # vanila algorithm, time complexity=O(b)
     if b == 0:
         return 1
     res = a
