@@ -26,6 +26,7 @@ def pow_vanila(a, b):
 
 def pow(a, b):
     def p1(a, b):
+        # 子函数用于“翻倍乘法”, 次数为2^i<b
         i = 2
         while i < b:
             a = a * a
@@ -39,6 +40,7 @@ def pow(a, b):
     res = 1
     remain = abs(b)
     while remain > 0:
+        # 循环这个子函数，b每次为上一次翻倍乘法后剩下的次数。
         tmp, cur = p1(a, remain)
         res *= tmp
         remain -= cur

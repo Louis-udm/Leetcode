@@ -1,4 +1,4 @@
-# return the number that it's the maximun pair in the array.
+# return the number that it's the maximun pair in the array. no found returns 0
 # [1, 2, -3,3,2,-2 -4] -> 3, because 3 and -3 are max pair in the array.
 
 

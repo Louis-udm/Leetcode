@@ -9,8 +9,11 @@
 # balance("(()()(") -> "()()"
 
 def balance(s:str):
-    stack=[]
+    # 注意这个题目不是为了做演算并得出结果，而是为了检查并去除多余的括号
+    # 所以使用一个同样长度的array记录"去除/留下"每个括号
     res=[0]*len(s)
+    # stack辅助，用于暂存(
+    stack=[]
     for i,c in enumerate(s):
         if c not in (')','('):
             res[i]=1
@@ -50,3 +53,4 @@ def balance2(s:str):
 print(balance("()(()()")) # -> () () ()
 print(balance("(a)b(1(c)(d)")) # -> () () ()
 print(balance(")((()(()))")) # -> (( () () )) or ( () (()) )
+print(balance(")((()(()))))))")) # -> (( () ( () ) ))

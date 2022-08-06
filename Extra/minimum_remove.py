@@ -17,7 +17,7 @@ def solution(A):
 
     min_for_items = []
     for k, v in count_dict.items():
-        # add/remove times: abs(k-v), completely remove it: v
+        # add/remove times for keep it: abs(k-v), completely remove it: v
         min_for_it = min(abs(k - v), v)
         min_for_items.append(min_for_it)
         

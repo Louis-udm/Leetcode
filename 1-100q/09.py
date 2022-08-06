@@ -54,8 +54,11 @@ def is_palindrome_int(num: int) -> bool:
     i = 1
     l = len(str(num))
     while True:
+        # 循环中每次,num去头去尾
+        # 去头num % 10 ** (l - i + 1), 去尾// 10 ** (i - 1)
         num = (num % 10 ** (l - i + 1)) // 10 ** (i - 1)
         l = len(str(num))
+        # 比较num的头==尾?
         if num // 10 ** (l - 1) != num % 10:
             return False
         if l <= 1:
