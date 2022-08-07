@@ -79,8 +79,8 @@ Match the parentheses.
 - 所以使用一个同样长度的array记录"去除/留下"每个括号
 - 需要一个辅助stack，用于暂存左括号
 
-### [offer 40 find k minimum given array](./Extra/offer40_k_min.py)
-[剑指 Offer 40. 最小的k个数](https://blog.algomooc.com/040.html#%E4%B8%80%E3%80%81%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0)
+### [Find k minimum given array](./Extra/offer40_k_min.py)
+[来源: 剑指 Offer 40. 最小的k个数](https://blog.algomooc.com/040.html#%E4%B8%80%E3%80%81%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0)
 输入整数数组 arr ，找出其中最小的 k 个数。例如，输入 4、5、1、6、2、7、3、8 这 8 个数字，
 则最小的 4 个数字是 1、2、3、4 。
 - 暴力解法: sorted(array)[:k]
