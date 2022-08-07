@@ -1,3 +1,5 @@
+[toc]
+
 # Notices
 
 * 先看, 有动画和解题思路: https://blog.algomooc.com/(但是题目不完全同leetcode对应) 
