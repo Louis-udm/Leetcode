@@ -1,8 +1,9 @@
 # Notices
 
-* [剑指 Offer](https://blog.algomooc.com/)(但是题目不完全同leetcode对应) 
+* [剑指 Offer](https://blog.algomooc.com/)(java, 题目不完全同leetcode对应) 
 * [java leetcode中文](https://github.com/MisterBooo/LeetCodeAnimation)
-* 结合本repository看python实现: Python solution of problems from [LeetCode](https://leetcode.com/).
+* 结合本repository看python实现([forked from](https://github.com/Garvit244/Leetcode)): Python solution of problems from [LeetCode](https://leetcode.com/).
+* 大部分额外添加的题目在Extra中
   
 # 其他python相关leetcode资源:
 * https://zhenyu0519.github.io/categories/#Linked-List
@@ -29,20 +30,20 @@
 # Questions:
 前几道经典题的动画解析: https://github.com/MisterBooo/LeetCodeAnimation
 
-## Array and Tree
-### [NO.1 TwoSum](./1-100q/01_TwoSum.py)
+## Leetcode
+### [Leetcode NO.1 TwoSum](./1-100q/01_TwoSum.py)
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 ![TwoSum](https://camo.githubusercontent.com/c8a78a4da1b40f98100cec12b6dc724e6159ab9859135dab3b87473e7374353e/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f61763437762e676966)
 - map辅助，扫描一遍，看(target-arr[i])是否在map中
 - 如果是已排序，并且不用map辅助，可以先2分法找到<=target的index作为right指针，然后只在前半部分找。left->, <-right [参考: 剑指 Offer 57. 和为s的两个数字](https://blog.algomooc.com/057.html)
 - 但是如果使用map辅助，不管是不是排序了的array，第二个解法似乎不占优势。
 
-### [NO.2 AddTwoNumbers (linked list)](./1-100q/02.py)
+### [Leetcode NO.2 AddTwoNumbers (linked list)](./1-100q/02.py)
 题目来源于 LeetCode 上第 2 号问题：两数相加。题目难度为 Medium，目前通过率为 33.9%. 
 给出两个 **非空** 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 **逆序** 的方式存储的，并且它们的每个节点只能存储 **一位** 数字。如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
 ![NO.2](https://camo.githubusercontent.com/56a78d49fe71daeb64a888d5167e0e924127f94ff670c48871825ce634c38820/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f667a3933332e676966)
 
-### [NO.3 Longest Substring Without Repeating Characters](./1-100q/03.py) 给定一个字符串，请你找出其中不含有重复字符的 **最长子串** 的长度。
+### [Leetcode NO.3 Longest Substring Without Repeating Characters](./1-100q/03.py) 给定一个字符串，请你找出其中不含有重复字符的 **最长子串** 的长度。
 建立一个256位大小的整型数组 freg ，用来建立字符和其出现位置之间的映射。维护一个滑动窗口，窗口内的都是没有重复的字符，去尽可能的扩大窗口的大小，窗口不停的向右滑动。
 - （1）如果当前遍历到的字符从未出现过，那么直接扩大右边界；
 - （2）如果当前遍历到的字符出现过，则缩小窗口（左边索引向右移动），然后继续观察当前遍历到的字符；
@@ -55,18 +56,19 @@ Given an array of integers, return indices of the two numbers such that they add
 2. 之前出现过但是没有在当前window，start不用变(但更新mapset中这个char的位置+1)
 ![NO.3](https://camo.githubusercontent.com/4d78fd6ac2ffe9559d2188efb0dd57a95f5aeb3c831653ce186777eb5ed298b9/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f76786137662e676966)
 
-### [NO.9 Palindrome Number](./1-100q/09.py)
+### [Leetcode NO.9 Palindrome Number](./1-100q/09.py)
 判断一个整数是否是回文数:
 loo循环, 每次num去头去尾. 去头num % 10 ** (l - i + 1), 去尾// 10 ** (i - 1), 然后比较num的头==尾(num // 10 ** (l - 1) == num % 10)
 ![](https://blog-1257126549.cos.ap-guangzhou.myqcloud.com/blog/v3tkl.gif)
 
-### [NO.53 Max sum of contiguous subarray](./1-100q/53.py) 
-[来源: 剑指 Offer 42. 连续子数组的最大和](https://blog.algomooc.com/042.html)
+### [Leetcode NO.53 Max sum of contiguous subarray](./1-100q/53.py) 
+[参考: 剑指 Offer 42. 连续子数组的最大和](https://blog.algomooc.com/042.html)
 Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 - 可以这样理解：遍历每个item, 对于当前item，前面的sum是不是当前item的累赘(就是前面的sum是不是>0),
 - 如果前面的sum<0，那就舍弃前面的sum，新的sum从当前item开始. 可以保留每移动一步新update后的sum，然后max(list_of_sums)
 ![NO.53](https://camo.githubusercontent.com/4d78fd6ac2ffe9559d2188efb0dd57a95f5aeb3c831653ce186777eb5ed298b9/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f76786137662e676966)
 
+## Company exams
 ### [Smallest missing](./Extra/smallest_missing.py)
 Given a list of positive integers (greater than 0), find the smallest missing one from the list range.
 Example: list = [2,4,6], your function will return 3, which will be the smallest one in this case.
@@ -100,6 +102,77 @@ Match the parentheses.
 - 注意这个题目不是为了做演算并得出结果，而是为了检查并去除多余的括号
 - 所以使用一个同样长度的array记录"去除/留下"每个括号
 - 需要一个辅助stack，用于暂存左括号
+
+## 剑指 Offer
+### 找出数组中重复的数字
+[来源: 剑指 Offer 03. 数组中重复的数字](https://blog.algomooc.com/003.html)
+在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。
+请找出数组中任意一个重复的数字。
+- map辅助,使索引与值一一对应，即索引 0 的值为 0，索引 1 的值为 1。而一旦某个索引的值不只一个，则找到了重复的数字，也即发生了 哈希冲突
+
+### 二维数组中的查找
+[来源: 剑指 Offer 04. 二维数组中的查找](https://blog.algomooc.com/004.html)
+在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+- 仔细观察矩阵，可以发现：左下角元素为所在列最大元素，所在行最小元素
+- 如果 左下角元素 大于了目标值，则目标值一定在该行的上方， 左下角元素 所在行可以消去。
+- 如果 左下角元素 小于了目标值，则目标值一定在该列的右方， 左下角元素 所在列可以消去。
+
+具体操作为从矩阵左下角元素开始遍历，并与目标值对比：
+- 当 matrix[i][j] > target 时： 行索引向上移动一格（即 i--），即消去矩阵第 i 行元素；
+- 当 matrix[i][j] < target 时： 列索引向右移动一格（即 j++），即消去矩阵第 j 列元素；
+- 当 matrix[i][j] == target 时： 返回 true。
+- 如果越界，则返回 false。
+
+### 用两个栈实现一个队列
+[来源: 剑指 Offer 09. 用两个栈实现队列](https://blog.algomooc.com/009.html)
+队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。(若队列中没有元素，deleteHead 操作返回 -1 )
+- 用两个stack实现
+- 入队操作: 如果是栈的插入操作，那我们可以把元素都先插入到 stack1 中，也就实现了队列的 入队操作 。stack1.push(value)
+- 出队操作: 
+- 1.当 stack2 中不为空时，直接操作，此时在 stack2 中的栈顶元素是最先进入队列的元素，返回该元素即可, stack2.pop()；
+- 2.如果 stack2 为空且 stack1 也为空，返回 -1；
+- 3.如果 stack2 为空且 stack1 不为空，首先需要把 stack1 中的元素逐个弹出并压入到 stack2中: loop stack2.push(stack1.pip()))，然后返回stack2 的栈顶元素即可: stack2.pop()。
+
+### 旋转数组的最小数字
+[来源: 剑指 Offer 11. 旋转数组的最小数字](https://blog.algomooc.com/011.html)
+把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组[3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为 1。
+- 被旋转过的数字，存在一个差异大于1的异常分割点，异常点的右边就是最小值
+- 2分法查找，如果mid > right,意味着异常点肯定是发生在 [ mid + 1 , right ] 这个区间的
+- 如果mid < right, 异常点发生在 [ left , mid ] 这个区间
+
+### 判断在一个矩阵中是否存在一条包含某字符串所有字符的路径
+[来源: 剑指 Offer 12. 矩阵中的路径](https://blog.algomooc.com/012.html)
+请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。
+
+如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。例如，在下面的3×4的矩阵中包含一条字符串“bfce”的路径（路径中的字母用加粗标出）。
+
+[["a","b","c","e"], ["s","f","c","s"], ["a","d","e","e"]]
+
+但矩阵中不包含字符串“abfb”的路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入这个格子。
+
+- 两层循环，最外层遍历矩阵所有字符,针对每个匹配到str首字符的情况，进入下一层循环
+- 内层循环，根据str下一个字符（recursive方式）游走（上左下右），
+- 为了保证不重复访问节点，可以将这条路径上已经访问过的节点，修改为不在 str 当中的一个字符
+- 修改完后会出现一种情况，当前的节点元素与目标元素相匹配，但是在它的四个方向的节点中都找不到可以匹配到目标下一元素的节点。这时需要把这个点回退，根据之前的操作，当前的节点被修改为了 #，所以为了能够回退成功，再回退操作时需要重新将 # 修改回原来的元素。
+
+### 调整数组顺序使奇数位于偶数前面
+[来源: 剑指 Offer 21. 调整数组顺序使奇数位于偶数前面](https://blog.algomooc.com/021.html)
+输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有奇数位于数组的前半部分，所有偶数位于数组的后半部分。
+- left, right 指针，走走停停，互相交换
+- while left<right:
+- in loop: while(left < right && (nums[left] & 1) == 1) left++;
+- in loop: while(left < right && (nums[right] & 1) == 0) right--;
+- in loop: nums[left] <-> nums[right];
+
+### 包含min函数O(1)的栈
+[来源: 剑指 Offer 30. 包含min函数的栈](https://blog.algomooc.com/030.html)
+定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数，在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。
+- 要求O(1)，那么只能使用辅助空间进行存储，这是一种空间换时间的思想
+- 设置两个栈：普通栈和辅助栈
+- push 操作: 普通栈：直接添加 push 进来的值,辅助栈：每次 push 一个新元素的时候，将普通栈中最小的元素 push 进辅助栈中
+- pop 操作: 普通栈：直接移除普通栈中的栈顶元素, 辅助栈：判断普通栈中刚刚移除的栈顶元素值是否和此时辅助栈中的栈顶元素相同，如果是则将辅助栈中的栈顶元素移除，否则不执行操作，这样的目的是为了让辅助栈中的栈顶元素始终是普通栈中的最小值
+- getMin 操作:返回辅助栈的栈顶元素
+
 
 ### [Find k minimum given array](./Extra/offer40_k_min.py)
 [来源: 剑指 Offer 40. 最小的k个数](https://blog.algomooc.com/040.html)
@@ -145,6 +218,9 @@ Match the parentheses.
 [来源: 剑指 Offer 58 - II. 左旋转字符串](https://blog.algomooc.com/058.html)
 - 好像这个解题思路化简为繁?
 
+## 其他linkedList操作和Tree
+[参考<剑指 Offer>相关](https://blog.algomooc.com/)
+
 ## 动态规划
 
 ### 把数字翻译成字符串, 共有多少种?
@@ -166,3 +242,5 @@ Match the parentheses.
 - 暴力算法为双循环，O(n^2)
 - 在公式 B[i]=A[0]×A[1]×…×A[i-1]×A[i+1]×…×A[n-1] 中，实际上可以划分为两个部分，从 0 到 i - 1 和从 i + 1 到 n - 1，因此，想要构建乘积数组后某下标对应元素的值，只需要求出该下标对应原数组中其左边的元素的乘积和其右边的元素的乘积，最后将两个乘积再相乘即可
 - 保存会被重复计算的中间结果，具体为：leftA list保存当前元素之外，左边的累乘； rightA list保存当前元素外，右边的累乘。
+
+### [厉害了我的杯](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247484557&idx=1&sn=739d80488fe1169a9c9ca26ecfcdfba6&chksm=fa0e6b0ccd79e21a1c2b0d99db69f6206cddddfe2367742e9de1d7d17ec35a5ce29fa4e30d63&token=110841213&lang=zh_CN#rd)
