@@ -23,7 +23,7 @@ Given an array of integers, return indices of the two numbers such that they add
 给出两个 **非空** 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 **逆序** 的方式存储的，并且它们的每个节点只能存储 **一位** 数字。如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
 ![NO.2](https://camo.githubusercontent.com/56a78d49fe71daeb64a888d5167e0e924127f94ff670c48871825ce634c38820/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f667a3933332e676966)
 
-### [NO.3](./1-100q/03.py) 给定一个字符串，请你找出其中不含有重复字符的 **最长子串** 的长度。
+### [NO.3 Longest Substring Without Repeating Characters](./1-100q/03.py) 给定一个字符串，请你找出其中不含有重复字符的 **最长子串** 的长度。
 建立一个256位大小的整型数组 freg ，用来建立字符和其出现位置之间的映射。维护一个滑动窗口，窗口内的都是没有重复的字符，去尽可能的扩大窗口的大小，窗口不停的向右滑动。
 - （1）如果当前遍历到的字符从未出现过，那么直接扩大右边界；
 - （2）如果当前遍历到的字符出现过，则缩小窗口（左边索引向右移动），然后继续观察当前遍历到的字符；
@@ -36,7 +36,7 @@ Given an array of integers, return indices of the two numbers such that they add
 2. 之前出现过但是没有在当前window，start不用变(但更新mapset中这个char的位置+1)
 ![NO.3](https://camo.githubusercontent.com/4d78fd6ac2ffe9559d2188efb0dd57a95f5aeb3c831653ce186777eb5ed298b9/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f76786137662e676966)
 
-### [NO.9](./1-100q/09.py)
+### [NO.9 Palindrome Number](./1-100q/09.py)
 判断一个整数是否是回文数:
 loo循环, 每次num去头去尾. 去头num % 10 ** (l - i + 1), 去尾// 10 ** (i - 1), 然后比较num的头==尾(num // 10 ** (l - 1) == num % 10)
 ![](https://blog-1257126549.cos.ap-guangzhou.myqcloud.com/blog/v3tkl.gif)
