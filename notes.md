@@ -41,7 +41,8 @@ Given an array of integers, return indices of the two numbers such that they add
 loo循环, 每次num去头去尾. 去头num % 10 ** (l - i + 1), 去尾// 10 ** (i - 1), 然后比较num的头==尾(num // 10 ** (l - 1) == num % 10)
 ![](https://blog-1257126549.cos.ap-guangzhou.myqcloud.com/blog/v3tkl.gif)
 
-### [NO.53](./1-100q/53.py) 对应[剑指 Offer 42. 连续子数组的最大和](https://blog.algomooc.com/042.html#%E4%B8%80%E3%80%81%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0)
+### [NO.53 Max sum of contiguous subarray](./1-100q/53.py) 
+[来源: 剑指 Offer 42. 连续子数组的最大和](https://blog.algomooc.com/042.html#%E4%B8%80%E3%80%81%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0)
 Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 - 可以这样理解：遍历每个item, 对于当前item，前面的sum是不是当前item的累赘(就是前面的sum是不是>0),
 - 如果前面的sum<0，那就舍弃前面的sum，新的sum从当前item开始. 可以保留每移动一步新update后的sum，然后max(list_of_sums)
@@ -67,7 +68,7 @@ There is an array A of N integers sorted in non-decreasing order. in one move, y
 - collections.Counter(int list)
 - sum( for each int, min( add/remove times for keep it: abs(k-v), completely remove it: v ) )
 
-### [Implement power function.](./Extra/pow.py) 
+### [Implement power function](./Extra/pow.py) 
 Implement power(a,b) function only using +-*/
 - 先写一个子函数, 子函数用于“翻倍乘法”, 次数为2^i<b
 - 循环这个子函数，b每次为上一次翻倍乘法后剩下的次数。
