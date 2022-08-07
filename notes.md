@@ -9,6 +9,11 @@
 
 # Questions:
 前几道经典题的动画解析: https://github.com/MisterBooo/LeetCodeAnimation
+
+### [Time complexities of sort algorithms](https://segmentfault.com/a/1190000021638663)
+
+### [Quick Sort](./Extra/quick_sort.py)
+
 ### [NO.1 TwoSum](./1-100q/01_TwoSum.py)
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 ![TwoSum](https://camo.githubusercontent.com/c8a78a4da1b40f98100cec12b6dc724e6159ab9859135dab3b87473e7374353e/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f61763437762e676966)
@@ -73,3 +78,10 @@ Match the parentheses.
 - 注意这个题目不是为了做演算并得出结果，而是为了检查并去除多余的括号
 - 所以使用一个同样长度的array记录"去除/留下"每个括号
 - 需要一个辅助stack，用于暂存左括号
+
+### [offer 40 find k minimum given array](./Extra/offer40_k_min.py)
+[剑指 Offer 40. 最小的k个数](https://blog.algomooc.com/040.html#%E4%B8%80%E3%80%81%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0)
+输入整数数组 arr ，找出其中最小的 k 个数。例如，输入 4、5、1、6、2、7、3、8 这 8 个数字，
+则最小的 4 个数字是 1、2、3、4 。
+- 暴力解法: sorted(array)[:k]
+- quicksort apporch: 因为找出的这 k 个数并不需要按照顺序排列。借助快速排序,不断的缩小排序的区间, 直到左区域=k
