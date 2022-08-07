@@ -1,7 +1,7 @@
 # Notices
 
-* 先看, 有动画和解题思路: https://blog.algomooc.com/(但是题目不完全同leetcode对应) 
-* java leetcode中文 https://github.com/MisterBooo/LeetCodeAnimation
+* [剑指 Offer](https://blog.algomooc.com/)(但是题目不完全同leetcode对应) 
+* [java leetcode中文](https://github.com/MisterBooo/LeetCodeAnimation)
 * 结合本repository看python实现: Python solution of problems from [LeetCode](https://leetcode.com/).
   
 # 其他python相关leetcode资源:
@@ -159,7 +159,7 @@ Match the parentheses.
 - dp matrix (mxn), 记录每个格子的最大值，dp_matrix[m][n]就是答案
 - 由于每次只能向下或者向右移动一步,位置 (i,j) 的最优解等于当前位置上方位置(i-1,j)的最优解和左侧位置(i,j-1)的最优解的较大值,再加上当前位置的值.
 
-### [Left self out product](./Extra/left_one_out_product.py)
+### [Left self out product](./extra/offer_66_left_self_out_product.py)
 [来源: 剑指 Offer 66. 构建乘积数组](https://blog.algomooc.com/066.html)
 给定一个数组 A[0,1,…,n-1]，请构建一个数组 B[0,1,…,n-1]，其中 B[i] 的值是数组 A 中除了下标 i 以外的元素的积, 即 B[i]=A[0]×A[1]×…×A[i-1]×A[i+1]×…×A[n-1]。 **不能使用除法**
 - 如果可以使用除法，则先一遍遍历算出总乘积，然后另一遍除以arr[i]
