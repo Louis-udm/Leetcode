@@ -10,8 +10,8 @@
 
 # Data structure and general algo in Python
 * [TheAlgorithms in python](https://github.com/TheAlgorithms/Python)
-* [Python 标准内置类](https://www.cnblogs.com/paulwhw/articles/12304977.html)
-* [Python 标准内置类](https://zhuanlan.zhihu.com/p/69487899)
+* [Python 标准内置类1](https://www.cnblogs.com/paulwhw/articles/12304977.html)
+* [Python 标准内置类2](https://zhuanlan.zhihu.com/p/69487899)
 * [自己手动实现](https://nemo.cool/254.html)
 
 #### [BST (binary search tree)](Extra/bst.py)
