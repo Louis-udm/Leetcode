@@ -32,7 +32,8 @@ def pow(a, b):
             a = a * a
             i *= 2
 
-        return a, i // 2
+        # return a, i // 2
+        return a, i >> 1
 
     if b == 0:
         return 1

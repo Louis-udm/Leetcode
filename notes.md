@@ -1,4 +1,5 @@
-# Notice
+# Notices
+
 * 先看, 有动画和解题思路: https://blog.algomooc.com/(但是题目不完全同leetcode对应) 
 * java leetcode中文 https://github.com/MisterBooo/LeetCodeAnimation
 * 结合本repository看python实现: Python solution of problems from [LeetCode](https://leetcode.com/).
@@ -6,6 +7,18 @@
 # 其他python相关leetcode资源:
 * https://zhenyu0519.github.io/categories/#Linked-List
 * https://github.com/youngyangyang04/leetcode-master
+
+# Data structure in Python
+* [TheAlgorithms in python](https://github.com/TheAlgorithms/Python)
+* [Python 标准内置类](https://www.cnblogs.com/paulwhw/articles/12304977.html)
+* [Python 标准内置类](https://zhuanlan.zhihu.com/p/69487899)
+* [自己手动实现](https://nemo.cool/254.html)
+
+#### BST (binary search tree)
+二叉搜索树是一棵有序的二叉树: 1、若它的左子树不为空，那么左子树上的所有值均小于它的根节点; 2、若它的右子树不为空，那么右子树上所有值均大于它的根节点; 3、它的左子树和右子树也都是二叉搜索树
+
+#### [Heap (堆)](Extra/heap.py)
+堆 (heap) 是一种经过排序的完全二叉树，其中任一非叶子节点的值均不大于（或不小于）其左孩子和右孩子节点的值。
 
 # Questions:
 前几道经典题的动画解析: https://github.com/MisterBooo/LeetCodeAnimation
