@@ -8,7 +8,7 @@
 * https://zhenyu0519.github.io/categories/#Linked-List
 * https://github.com/youngyangyang04/leetcode-master
 
-# Data structure in Python
+# Data structure and general algo in Python
 * [TheAlgorithms in python](https://github.com/TheAlgorithms/Python)
 * [Python 标准内置类](https://www.cnblogs.com/paulwhw/articles/12304977.html)
 * [Python 标准内置类](https://zhuanlan.zhihu.com/p/69487899)
@@ -20,13 +20,16 @@
 #### [Heap (堆)](Extra/heap.py)
 堆 (heap) 是一种经过排序的完全二叉树，其中任一非叶子节点的值均不大于（或不小于）其左孩子和右孩子节点的值。
 
+#### [Time complexities of sort algorithms](https://segmentfault.com/a/1190000021638663)
+
+#### [Quick Sort](./Extra/quick_sort.py)
+
+#### [Merge Sort](./Extra/merge_sort.py)
+
 # Questions:
 前几道经典题的动画解析: https://github.com/MisterBooo/LeetCodeAnimation
 
-### [Time complexities of sort algorithms](https://segmentfault.com/a/1190000021638663)
-
-### [Quick Sort](./Extra/quick_sort.py)
-
+## Array and Tree
 ### [NO.1 TwoSum](./1-100q/01_TwoSum.py)
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 ![TwoSum](https://camo.githubusercontent.com/c8a78a4da1b40f98100cec12b6dc724e6159ab9859135dab3b87473e7374353e/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f61763437762e676966)
@@ -55,7 +58,7 @@ loo循环, 每次num去头去尾. 去头num % 10 ** (l - i + 1), 去尾// 10 ** 
 ![](https://blog-1257126549.cos.ap-guangzhou.myqcloud.com/blog/v3tkl.gif)
 
 ### [NO.53 Max sum of contiguous subarray](./1-100q/53.py) 
-[来源: 剑指 Offer 42. 连续子数组的最大和](https://blog.algomooc.com/042.html#%E4%B8%80%E3%80%81%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0)
+[来源: 剑指 Offer 42. 连续子数组的最大和](https://blog.algomooc.com/042.html)
 Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 - 可以这样理解：遍历每个item, 对于当前item，前面的sum是不是当前item的累赘(就是前面的sum是不是>0),
 - 如果前面的sum<0，那就舍弃前面的sum，新的sum从当前item开始. 可以保留每移动一步新update后的sum，然后max(list_of_sums)
@@ -94,8 +97,46 @@ Match the parentheses.
 - 需要一个辅助stack，用于暂存左括号
 
 ### [Find k minimum given array](./Extra/offer40_k_min.py)
-[来源: 剑指 Offer 40. 最小的k个数](https://blog.algomooc.com/040.html#%E4%B8%80%E3%80%81%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0)
+[来源: 剑指 Offer 40. 最小的k个数](https://blog.algomooc.com/040.html)
 输入整数数组 arr ，找出其中最小的 k 个数。例如，输入 4、5、1、6、2、7、3、8 这 8 个数字，
 则最小的 4 个数字是 1、2、3、4 。
 - 暴力解法: sorted(array)[:k]
 - quicksort apporch: 因为找出的这 k 个数并不需要按照顺序排列。借助快速排序,不断的缩小排序的区间, 直到左区域=k
+
+### Combine all ints to a min int
+[来源: 剑指 Offer 45. 把数组排成最小的数](https://blog.algomooc.com/045.html)
+输入一个非负整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。
+- 第一步就先把整型数组转换为字符串数组(因为组合后的整数可能会溢出)。
+- 借助quick sort算法进行排序，最后串接所有字符串为一个字符串
+- 注意排序时，每一次比较两种拼接，直接字符比较就行，并选小的。比如 "30"+"3" < "3"+"30"
+
+### [Count reversed_pair](./extra/offer51_count_reversed_pair.py)
+[来源: 剑指 Offer 51. 数组中的逆序对](https://blog.algomooc.com/051.html)
+在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。
+- 借助归并排序的分而治之再两两合并思路
+- 只需在合并时计数当前合并的逆序数量，最后全部加起来
+- when arr1[0] > arr2[0]: count+=len(arr1) # arr1当前item>arr2当前item，意味着arr1后面的都大于arr2当前item, len是动态变化
+
+### [Fist only one char](./Extra/first_only_one.py)
+[来源: 剑指 Offer 50. 第一个只出现一次的字符](https://blog.algomooc.com/050.html)
+- very simple
+
+
+### Find the item(int) that appear more than half in an array
+[来源: 剑指 Offer 39. 数组中出现次数超过一半的数字](https://blog.algomooc.com/039.html)
+- 既然必定有一个数字超过一半的数量，那其实只能有一个
+- 打擂台, 扫描每个item，比较当前数量，最后在擂台上的就是答案
+
+## 动态规划
+
+### 把数字翻译成字符串, 共有多少种?
+[来源: 剑指 Offer 46. 把数字翻译成字符串](https://blog.algomooc.com/046.html)
+给定一个数字，我们按照如下规则把它翻译为字符串：0 翻译成 “a” ，1 翻译成 “b”，……，11 翻译成 “l”，……，25 翻译成 “z”。一个数字可能有多个翻译。请编程实现一个函数，用来计算一个数字有多少种不同的翻译方法。
+- dp list 记录前i个数字有多种翻译方法
+
+### mxn棋盘格，从(1,1)->(m,n)获取礼物的最大价值
+[来源: 剑指 Offer 47. 礼物的最大价值](https://blog.algomooc.com/047.html)
+在一个 m*n 的棋盘的每一格都放有一个礼物，每个礼物都有一定的价值（价值大于 0）。
+问从棋盘的左上角直到到达棋盘的右下角，不重复地走，请计算你最多能拿到多少价值的礼物？
+- dp matrix (mxn), 记录每个格子的最大值，dp_matrix[m][n]就是答案
+- 由于每次只能向下或者向右移动一步,位置 (i,j) 的最优解等于当前位置上方位置(i-1,j)的最优解和左侧位置(i,j-1)的最优解的较大值,再加上当前位置的值.
