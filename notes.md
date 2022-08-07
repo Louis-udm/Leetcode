@@ -1,5 +1,3 @@
-[toc]
-
 # Notices
 
 * 先看, 有动画和解题思路: https://blog.algomooc.com/(但是题目不完全同leetcode对应) 
@@ -35,6 +33,9 @@
 ### [NO.1 TwoSum](./1-100q/01_TwoSum.py)
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 ![TwoSum](https://camo.githubusercontent.com/c8a78a4da1b40f98100cec12b6dc724e6159ab9859135dab3b87473e7374353e/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f61763437762e676966)
+- map辅助，扫描一遍，看(target-arr[i])是否在map中
+- 如果是已排序，并且不用map辅助，可以先2分法找到<=target的index作为right指针，然后只在前半部分找。left->, <-right [参考: 剑指 Offer 57. 和为s的两个数字](https://blog.algomooc.com/057.html)
+- 但是如果使用map辅助，不管是不是排序了的array，第二个解法似乎不占优势。
 
 ### [NO.2 AddTwoNumbers (linked list)](./1-100q/02.py)
 题目来源于 LeetCode 上第 2 号问题：两数相加。题目难度为 Medium，目前通过率为 33.9%. 
@@ -69,7 +70,9 @@ Given an integer array nums, find the contiguous subarray (containing at least o
 ### [Smallest missing](./Extra/smallest_missing.py)
 Given a list of positive integers (greater than 0), find the smallest missing one from the list range.
 Example: list = [2,4,6], your function will return 3, which will be the smallest one in this case.
-min( set(list( range( min(l),max(l)+1 ) )) - set(l) )
+- min( set(list( range( min(l),max(l)+1 ) )) - set(l) )
+- 正常解法: 如果是已排序的array, 2分法比较中间item的值和index的大小：如果相等说明前面是连续的，则继续2分法找后面；如果大于，说明前面不连续，则继续2分法找前面。
+- [参考: 剑指 Offer 53 - II. 0～n-1中缺失的数字](https://blog.algomooc.com/0532.html)
 
 ### [Palindrome](./Extra/palindrome.py) 
 Palindrome: word, phrase, or sequence that reads the same backward as forward, e.g., madam or nursesrun. Given a string, find the longest substring which is palindrome. For example, if the given string is “isevilolivealive”, the output should be “evilolive”.
@@ -123,11 +126,24 @@ Match the parentheses.
 [来源: 剑指 Offer 50. 第一个只出现一次的字符](https://blog.algomooc.com/050.html)
 - very simple
 
+### Count a target that in an arry
+[来源: 剑指 Offer 53 - I. 在排序数组中查找数字](https://blog.algomooc.com/053.html)
+统计一个数字在排序数组中出现的次数。
+- 2分法定位数字，然后以它为中心，前后扩展并计数
+
 
 ### Find the item(int) that appear more than half in an array
 [来源: 剑指 Offer 39. 数组中出现次数超过一半的数字](https://blog.algomooc.com/039.html)
 - 既然必定有一个数字超过一半的数量，那其实只能有一个
 - 打擂台, 扫描每个item，比较当前数量，最后在擂台上的就是答案
+
+### 判断5张牌是不是顺子
+[来源: 剑指 Offer 61. 扑克牌中的顺子](https://blog.algomooc.com/061.html)
+- 要先分析规则，根据规则实现。估计screen coding不会遇到
+
+### 左旋转字符
+[来源: 剑指 Offer 58 - II. 左旋转字符串](https://blog.algomooc.com/058.html)
+- 好像这个解题思路化简为繁?
 
 ## 动态规划
 
@@ -142,3 +158,11 @@ Match the parentheses.
 问从棋盘的左上角直到到达棋盘的右下角，不重复地走，请计算你最多能拿到多少价值的礼物？
 - dp matrix (mxn), 记录每个格子的最大值，dp_matrix[m][n]就是答案
 - 由于每次只能向下或者向右移动一步,位置 (i,j) 的最优解等于当前位置上方位置(i-1,j)的最优解和左侧位置(i,j-1)的最优解的较大值,再加上当前位置的值.
+
+### [Left self out product](./Extra/left_one_out_product.py)
+[来源: 剑指 Offer 66. 构建乘积数组](https://blog.algomooc.com/066.html)
+给定一个数组 A[0,1,…,n-1]，请构建一个数组 B[0,1,…,n-1]，其中 B[i] 的值是数组 A 中除了下标 i 以外的元素的积, 即 B[i]=A[0]×A[1]×…×A[i-1]×A[i+1]×…×A[n-1]。 **不能使用除法**
+- 如果可以使用除法，则先一遍遍历算出总乘积，然后另一遍除以arr[i]
+- 暴力算法为双循环，O(n^2)
+- 在公式 B[i]=A[0]×A[1]×…×A[i-1]×A[i+1]×…×A[n-1] 中，实际上可以划分为两个部分，从 0 到 i - 1 和从 i + 1 到 n - 1，因此，想要构建乘积数组后某下标对应元素的值，只需要求出该下标对应原数组中其左边的元素的乘积和其右边的元素的乘积，最后将两个乘积再相乘即可
+- 保存会被重复计算的中间结果，具体为：leftA list保存当前元素之外，左边的累乘； rightA list保存当前元素外，右边的累乘。
