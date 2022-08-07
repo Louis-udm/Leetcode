@@ -14,7 +14,7 @@
 * [Python 标准内置类](https://zhuanlan.zhihu.com/p/69487899)
 * [自己手动实现](https://nemo.cool/254.html)
 
-#### BST (binary search tree)
+#### [BST (binary search tree)](Extra/bst.py)
 二叉搜索树是一棵有序的二叉树: 1、若它的左子树不为空，那么左子树上的所有值均小于它的根节点; 2、若它的右子树不为空，那么右子树上所有值均大于它的根节点; 3、它的左子树和右子树也都是二叉搜索树
 
 #### [Heap (堆)](Extra/heap.py)
