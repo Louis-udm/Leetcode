@@ -47,7 +47,7 @@ Given an integer array nums, find the contiguous subarray (containing at least o
 - 如果前面的sum<0，那就舍弃前面的sum，新的sum从当前item开始. 可以保留每移动一步新update后的sum，然后max(list_of_sums)
 ![NO.53](https://camo.githubusercontent.com/4d78fd6ac2ffe9559d2188efb0dd57a95f5aeb3c831653ce186777eb5ed298b9/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f76786137662e676966)
 
-### [smallest missing](./Extra/smallest_missing.py)
+### [Smallest missing](./Extra/smallest_missing.py)
 Given a list of positive integers (greater than 0), find the smallest missing one from the list range.
 Example: list = [2,4,6], your function will return 3, which will be the smallest one in this case.
 min( set(list( range( min(l),max(l)+1 ) )) - set(l) )
@@ -67,13 +67,13 @@ There is an array A of N integers sorted in non-decreasing order. in one move, y
 - collections.Counter(int list)
 - sum( for each int, min( add/remove times for keep it: abs(k-v), completely remove it: v ) )
 
-### [implement power function.](./Extra/pow.py) 
+### [Implement power function.](./Extra/pow.py) 
 Implement power(a,b) function only using +-*/
 - 先写一个子函数, 子函数用于“翻倍乘法”, 次数为2^i<b
 - 循环这个子函数，b每次为上一次翻倍乘法后剩下的次数。
 - 注意特例b=0,1,2,负数
 
-### [bracket](./Extra/bracket.py) 
+### [Make the brackets match](./Extra/bracket.py) 
 Match the parentheses.
 - 注意这个题目不是为了做演算并得出结果，而是为了检查并去除多余的括号
 - 所以使用一个同样长度的array记录"去除/留下"每个括号
