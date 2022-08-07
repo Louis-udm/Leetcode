@@ -115,7 +115,7 @@ Match the parentheses.
 - 借助quick sort算法进行排序，最后串接所有字符串为一个字符串
 - 注意排序时，每一次比较两种拼接，直接字符比较就行，并选小的。比如 "30"+"3" < "3"+"30"
 
-### [Count reversed_pair](./extra/offer51_count_reversed_pair.py)
+### [Count reversed_pair](./Extra/offer51_count_reversed_pair.py)
 [来源: 剑指 Offer 51. 数组中的逆序对](https://blog.algomooc.com/051.html)
 在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。
 - 借助归并排序的分而治之再两两合并思路
@@ -159,7 +159,7 @@ Match the parentheses.
 - dp matrix (mxn), 记录每个格子的最大值，dp_matrix[m][n]就是答案
 - 由于每次只能向下或者向右移动一步,位置 (i,j) 的最优解等于当前位置上方位置(i-1,j)的最优解和左侧位置(i,j-1)的最优解的较大值,再加上当前位置的值.
 
-### [Left self out product](./extra/offer_66_left_self_out_product.py)
+### [Left self out product](./Extra/offer_66_left_self_out_product.py)
 [来源: 剑指 Offer 66. 构建乘积数组](https://blog.algomooc.com/066.html)
 给定一个数组 A[0,1,…,n-1]，请构建一个数组 B[0,1,…,n-1]，其中 B[i] 的值是数组 A 中除了下标 i 以外的元素的积, 即 B[i]=A[0]×A[1]×…×A[i-1]×A[i+1]×…×A[n-1]。 **不能使用除法**
 - 如果可以使用除法，则先一遍遍历算出总乘积，然后另一遍除以arr[i]
