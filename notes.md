@@ -15,17 +15,17 @@
 * [Python 标准内置类2](https://zhuanlan.zhihu.com/p/69487899)
 * [自己手动实现](https://nemo.cool/254.html)
 
-#### [BST (binary search tree)](Extra/bst.py)
+#### [1. BST (binary search tree)](Extra/bst.py)
 二叉搜索树是一棵有序的二叉树: 1、若它的左子树不为空，那么左子树上的所有值均小于它的根节点; 2、若它的右子树不为空，那么右子树上所有值均大于它的根节点; 3、它的左子树和右子树也都是二叉搜索树
 
-#### [Heap (堆)](Extra/heap.py)
+#### [2. Heap (堆)](Extra/heap.py)
 堆 (heap) 是一种经过排序的完全二叉树，其中任一非叶子节点的值均不大于（或不小于）其左孩子和右孩子节点的值。
 
-#### [Time complexities of sort algorithms](https://segmentfault.com/a/1190000021638663)
+#### [3. Time complexities of sort algorithms](https://segmentfault.com/a/1190000021638663)
 
-#### [Quick Sort](./Extra/quick_sort.py)
+#### [4. Quick Sort](./Extra/quick_sort.py)
 
-#### [Merge Sort](./Extra/merge_sort.py)
+#### [5. Merge Sort](./Extra/merge_sort.py)
 
 # Questions:
 前几道经典题的动画解析: https://github.com/MisterBooo/LeetCodeAnimation
@@ -69,48 +69,48 @@ Given an integer array nums, find the contiguous subarray (containing at least o
 ![NO.53](https://camo.githubusercontent.com/4d78fd6ac2ffe9559d2188efb0dd57a95f5aeb3c831653ce186777eb5ed298b9/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f76786137662e676966)
 
 ## Company exams
-### [Smallest missing](./Extra/smallest_missing.py)
+### [1. Smallest missing](./Extra/smallest_missing.py)
 Given a list of positive integers (greater than 0), find the smallest missing one from the list range.
 Example: list = [2,4,6], your function will return 3, which will be the smallest one in this case.
 - min( set(list( range( min(l),max(l)+1 ) )) - set(l) )
 - 正常解法: 如果是已排序的array, 2分法比较中间item的值和index的大小：如果相等说明前面是连续的，则继续2分法找后面；如果大于，说明前面不连续，则继续2分法找前面。
 - [参考: 剑指 Offer 53 - II. 0～n-1中缺失的数字](https://blog.algomooc.com/0532.html)
 
-### [Palindrome](./Extra/palindrome.py) 
+### [2. Palindrome](./Extra/palindrome.py) 
 Palindrome: word, phrase, or sequence that reads the same backward as forward, e.g., madam or nursesrun. Given a string, find the longest substring which is palindrome. For example, if the given string is “isevilolivealive”, the output should be “evilolive”.
 - 以每个char为中心，判断左右char是否相同并向外扩展。分单中心字符和双中心字符（也可以采用间隔插入一个字符比如|来变为只按单中心字符类型)
 
-### [Max pair](./Extra/max_pair.py) 
+### [3. Max pair](./Extra/max_pair.py) 
 return the number that it's the maximun pair in the array.
 [1, 2, -3,3,2,-2 -4] -> 3, because 3 and -3 are max pair in the array. no found returns 0
 - sorted(list), 然后循环遍历 if -item in list?
 - 注意如果第一个item>0 则马上返回0
 
-### [Mini remove](./Extra/minimum_remove.py) 
+### [4. Mini remove](./Extra/minimum_remove.py) 
 There is an array A of N integers sorted in non-decreasing order. in one move, you can either remove an integer from A or insert an integerbefore or after any element of A. The goal is to achieve an array in which all values X that are present in the array occur exactly X times.The function should return the minimum number of moves after which every value X in the array occurs exactly X times. Note that it's permissible to remove some values entirely, if appropriate.
 - collections.Counter(int list)
 - sum( for each int, min( add/remove times for keep it: abs(k-v), completely remove it: v ) )
 
-### [Implement power function](./Extra/pow.py) 
+### [5. Implement power function](./Extra/pow.py) 
 Implement power(a,b) function only using +-*/
 - 先写一个子函数, 子函数用于“翻倍乘法”, 次数为2^i<b
 - 循环这个子函数，b每次为上一次翻倍乘法后剩下的次数。
 - 注意特例b=0,1,2,负数
 
-### [Make the brackets match](./Extra/bracket.py) 
+### [6. Make the brackets match](./Extra/bracket.py) 
 Match the parentheses.
 - 注意这个题目不是为了做演算并得出结果，而是为了检查并去除多余的括号
 - 所以使用一个同样长度的array记录"去除/留下"每个括号
 - 需要一个辅助stack，用于暂存左括号
 
 ## 剑指 Offer
-### 找出数组中重复的数字
+### 1. 找出数组中重复的数字
 [来源: 剑指 Offer 03. 数组中重复的数字](https://blog.algomooc.com/003.html)
 在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。
 请找出数组中任意一个重复的数字。
 - map辅助,使索引与值一一对应，即索引 0 的值为 0，索引 1 的值为 1。而一旦某个索引的值不只一个，则找到了重复的数字，也即发生了 哈希冲突
 
-### 二维数组中的查找
+### 2. 二维数组中的查找
 [来源: 剑指 Offer 04. 二维数组中的查找](https://blog.algomooc.com/004.html)
 在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
 - 仔细观察矩阵，可以发现：左下角元素为所在列最大元素，所在行最小元素
@@ -123,7 +123,7 @@ Match the parentheses.
 - 当 matrix[i][j] == target 时： 返回 true。
 - 如果越界，则返回 false。
 
-### 用两个栈实现一个队列
+### 3. 用两个栈实现一个队列
 [来源: 剑指 Offer 09. 用两个栈实现队列](https://blog.algomooc.com/009.html)
 队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。(若队列中没有元素，deleteHead 操作返回 -1 )
 - 用两个stack实现
@@ -133,14 +133,14 @@ Match the parentheses.
 - 2.如果 stack2 为空且 stack1 也为空，返回 -1；
 - 3.如果 stack2 为空且 stack1 不为空，首先需要把 stack1 中的元素逐个弹出并压入到 stack2中: loop stack2.push(stack1.pip()))，然后返回stack2 的栈顶元素即可: stack2.pop()。
 
-### 旋转数组的最小数字
+### 4. 旋转数组的最小数字
 [来源: 剑指 Offer 11. 旋转数组的最小数字](https://blog.algomooc.com/011.html)
 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组[3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为 1。
 - 被旋转过的数字，存在一个差异大于1的异常分割点，异常点的右边就是最小值
 - 2分法查找，如果mid > right,意味着异常点肯定是发生在 [ mid + 1 , right ] 这个区间的
 - 如果mid < right, 异常点发生在 [ left , mid ] 这个区间
 
-### 判断在一个矩阵中是否存在一条包含某字符串所有字符的路径
+### 5. 判断在一个矩阵中是否存在一条包含某字符串所有字符的路径
 [来源: 剑指 Offer 12. 矩阵中的路径](https://blog.algomooc.com/012.html)
 请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。
 
@@ -155,7 +155,7 @@ Match the parentheses.
 - 为了保证不重复访问节点，可以将这条路径上已经访问过的节点，修改为不在 str 当中的一个字符
 - 修改完后会出现一种情况，当前的节点元素与目标元素相匹配，但是在它的四个方向的节点中都找不到可以匹配到目标下一元素的节点。这时需要把这个点回退，根据之前的操作，当前的节点被修改为了 #，所以为了能够回退成功，再回退操作时需要重新将 # 修改回原来的元素。
 
-### 调整数组顺序使奇数位于偶数前面
+### 6. 调整数组顺序使奇数位于偶数前面
 [来源: 剑指 Offer 21. 调整数组顺序使奇数位于偶数前面](https://blog.algomooc.com/021.html)
 输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有奇数位于数组的前半部分，所有偶数位于数组的后半部分。
 - left, right 指针，走走停停，互相交换
@@ -164,7 +164,7 @@ Match the parentheses.
 - in loop: while(left < right && (nums[right] & 1) == 0) right--;
 - in loop: nums[left] <-> nums[right];
 
-### 包含min函数O(1)的栈
+### 7. 包含min函数O(1)的栈
 [来源: 剑指 Offer 30. 包含min函数的栈](https://blog.algomooc.com/030.html)
 定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数，在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。
 - 要求O(1)，那么只能使用辅助空间进行存储，这是一种空间换时间的思想
@@ -174,68 +174,68 @@ Match the parentheses.
 - getMin 操作:返回辅助栈的栈顶元素
 
 
-### [Find k minimum given array](./Extra/offer40_k_min.py)
+### 8. [Find k minimum given array](./Extra/offer40_k_min.py)
 [来源: 剑指 Offer 40. 最小的k个数](https://blog.algomooc.com/040.html)
 输入整数数组 arr ，找出其中最小的 k 个数。例如，输入 4、5、1、6、2、7、3、8 这 8 个数字，
 则最小的 4 个数字是 1、2、3、4 。
 - 暴力解法: sorted(array)[:k]
 - quicksort apporch: 因为找出的这 k 个数并不需要按照顺序排列。借助快速排序,不断的缩小排序的区间, 直到左区域=k
 
-### Combine all ints to a min int
+### 9. Combine all ints to a min int
 [来源: 剑指 Offer 45. 把数组排成最小的数](https://blog.algomooc.com/045.html)
 输入一个非负整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。
 - 第一步就先把整型数组转换为字符串数组(因为组合后的整数可能会溢出)。
 - 借助quick sort算法进行排序，最后串接所有字符串为一个字符串
 - 注意排序时，每一次比较两种拼接，直接字符比较就行，并选小的。比如 "30"+"3" < "3"+"30"
 
-### [Count reversed_pair](./Extra/offer51_count_reversed_pair.py)
+### 10. [Count reversed_pair](./Extra/offer51_count_reversed_pair.py)
 [来源: 剑指 Offer 51. 数组中的逆序对](https://blog.algomooc.com/051.html)
 在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。
 - 借助归并排序的分而治之再两两合并思路
 - 只需在合并时计数当前合并的逆序数量，最后全部加起来
 - when arr1[0] > arr2[0]: count+=len(arr1) # arr1当前item>arr2当前item，意味着arr1后面的都大于arr2当前item, len是动态变化
 
-### [Fist only one char](./Extra/first_only_one.py)
+### 11. [Fist only one char](./Extra/first_only_one.py)
 [来源: 剑指 Offer 50. 第一个只出现一次的字符](https://blog.algomooc.com/050.html)
 - very simple
 
-### Count a target that in an arry
+### 12. Count a target that in an arry
 [来源: 剑指 Offer 53 - I. 在排序数组中查找数字](https://blog.algomooc.com/053.html)
 统计一个数字在排序数组中出现的次数。
 - 2分法定位数字，然后以它为中心，前后扩展并计数
 
 
-### Find the item(int) that appear more than half in an array
+### 13. Find the item(int) that appear more than half in an array
 [来源: 剑指 Offer 39. 数组中出现次数超过一半的数字](https://blog.algomooc.com/039.html)
 - 既然必定有一个数字超过一半的数量，那其实只能有一个
 - 打擂台, 扫描每个item，比较当前数量，最后在擂台上的就是答案
 
-### 判断5张牌是不是顺子
+### 14. 判断5张牌是不是顺子
 [来源: 剑指 Offer 61. 扑克牌中的顺子](https://blog.algomooc.com/061.html)
 - 要先分析规则，根据规则实现。估计screen coding不会遇到
 
-### 左旋转字符
+### 15. 左旋转字符
 [来源: 剑指 Offer 58 - II. 左旋转字符串](https://blog.algomooc.com/058.html)
-- 好像这个解题思路化简为繁?
+- 好像这个解题思路化简为繁了?
 
-## 其他linkedList操作和Tree
+## 16. 其他linkedList操作和Tree
 [参考<剑指 Offer>相关](https://blog.algomooc.com/)
 
 ## 动态规划
 
-### 把数字翻译成字符串, 共有多少种?
+### 1. 把数字翻译成字符串, 共有多少种?
 [来源: 剑指 Offer 46. 把数字翻译成字符串](https://blog.algomooc.com/046.html)
 给定一个数字，我们按照如下规则把它翻译为字符串：0 翻译成 “a” ，1 翻译成 “b”，……，11 翻译成 “l”，……，25 翻译成 “z”。一个数字可能有多个翻译。请编程实现一个函数，用来计算一个数字有多少种不同的翻译方法。
 - dp list 记录前i个数字有多种翻译方法
 
-### mxn棋盘格，从(1,1)->(m,n)获取礼物的最大价值
+### 2. mxn棋盘格，从(1,1)->(m,n)获取礼物的最大价值
 [来源: 剑指 Offer 47. 礼物的最大价值](https://blog.algomooc.com/047.html)
 在一个 m*n 的棋盘的每一格都放有一个礼物，每个礼物都有一定的价值（价值大于 0）。
 问从棋盘的左上角直到到达棋盘的右下角，不重复地走，请计算你最多能拿到多少价值的礼物？
 - dp matrix (mxn), 记录每个格子的最大值，dp_matrix[m][n]就是答案
 - 由于每次只能向下或者向右移动一步,位置 (i,j) 的最优解等于当前位置上方位置(i-1,j)的最优解和左侧位置(i,j-1)的最优解的较大值,再加上当前位置的值.
 
-### [Left self out product](./Extra/offer_66_left_self_out_product.py)
+### 3. [Left self out product](./Extra/offer_66_left_self_out_product.py)
 [来源: 剑指 Offer 66. 构建乘积数组](https://blog.algomooc.com/066.html)
 给定一个数组 A[0,1,…,n-1]，请构建一个数组 B[0,1,…,n-1]，其中 B[i] 的值是数组 A 中除了下标 i 以外的元素的积, 即 B[i]=A[0]×A[1]×…×A[i-1]×A[i+1]×…×A[n-1]。 **不能使用除法**
 - 如果可以使用除法，则先一遍遍历算出总乘积，然后另一遍除以arr[i]
@@ -243,4 +243,4 @@ Match the parentheses.
 - 在公式 B[i]=A[0]×A[1]×…×A[i-1]×A[i+1]×…×A[n-1] 中，实际上可以划分为两个部分，从 0 到 i - 1 和从 i + 1 到 n - 1，因此，想要构建乘积数组后某下标对应元素的值，只需要求出该下标对应原数组中其左边的元素的乘积和其右边的元素的乘积，最后将两个乘积再相乘即可
 - 保存会被重复计算的中间结果，具体为：leftA list保存当前元素之外，左边的累乘； rightA list保存当前元素外，右边的累乘。
 
-### [厉害了我的杯](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247484557&idx=1&sn=739d80488fe1169a9c9ca26ecfcdfba6&chksm=fa0e6b0ccd79e21a1c2b0d99db69f6206cddddfe2367742e9de1d7d17ec35a5ce29fa4e30d63&token=110841213&lang=zh_CN#rd)
+### 4. [厉害了我的杯](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247484557&idx=1&sn=739d80488fe1169a9c9ca26ecfcdfba6&chksm=fa0e6b0ccd79e21a1c2b0d99db69f6206cddddfe2367742e9de1d7d17ec35a5ce29fa4e30d63&token=110841213&lang=zh_CN#rd)
