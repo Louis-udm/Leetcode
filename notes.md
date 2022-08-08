@@ -79,6 +79,8 @@ Example: list = [2,4,6], your function will return 3, which will be the smallest
 ### [2. Palindrome](./Extra/palindrome.py) 
 Palindrome: word, phrase, or sequence that reads the same backward as forward, e.g., madam or nursesrun. Given a string, find the longest substring which is palindrome. For example, if the given string is “isevilolivealive”, the output should be “evilolive”.
 - 以每个char为中心，判断左右char是否相同并向外扩展。分单中心字符和双中心字符（也可以采用间隔插入一个字符比如|来变为只按单中心字符类型)
+- 动态规划解法: dp[i,j]=dp[i+1,j-1] if str[i]==str[j] else 0
+- [manacher](https://www.cxyxiaowu.com/2869.html)
 
 ### [3. Max pair](./Extra/max_pair.py) 
 return the number that it's the maximun pair in the array.
@@ -243,4 +245,7 @@ Match the parentheses.
 - 在公式 B[i]=A[0]×A[1]×…×A[i-1]×A[i+1]×…×A[n-1] 中，实际上可以划分为两个部分，从 0 到 i - 1 和从 i + 1 到 n - 1，因此，想要构建乘积数组后某下标对应元素的值，只需要求出该下标对应原数组中其左边的元素的乘积和其右边的元素的乘积，最后将两个乘积再相乘即可
 - 保存会被重复计算的中间结果，具体为：leftA list保存当前元素之外，左边的累乘； rightA list保存当前元素外，右边的累乘。
 
-### 4. [厉害了我的杯](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247484557&idx=1&sn=739d80488fe1169a9c9ca26ecfcdfba6&chksm=fa0e6b0ccd79e21a1c2b0d99db69f6206cddddfe2367742e9de1d7d17ec35a5ce29fa4e30d63&token=110841213&lang=zh_CN#rd)
+### 4. [回文动态规划 Palindrome](./Extra/palindrome.py) 
+- dp[i,j]=dp[i+1,j-1] if str[i]==str[j] else 0
+
+### 5. [厉害了我的杯](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247484557&idx=1&sn=739d80488fe1169a9c9ca26ecfcdfba6&chksm=fa0e6b0ccd79e21a1c2b0d99db69f6206cddddfe2367742e9de1d7d17ec35a5ce29fa4e30d63&token=110841213&lang=zh_CN#rd)
