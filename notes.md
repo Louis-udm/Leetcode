@@ -252,3 +252,10 @@ Match the parentheses.
 - dp[i,j]=dp[i+1,j-1] if str[i]==str[j] else 0
 
 ### 5. [厉害了我的杯](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247484557&idx=1&sn=739d80488fe1169a9c9ca26ecfcdfba6&chksm=fa0e6b0ccd79e21a1c2b0d99db69f6206cddddfe2367742e9de1d7d17ec35a5ce29fa4e30d63&token=110841213&lang=zh_CN#rd)
+
+### 5. [Longest common string](./Extra/LCS.py)
+![LCS example](https://www.geeksforgeeks.org/wp-content/uploads/Longest-Common-Subsequence.png)
+- Consider the input strings “AGGTAB” and “GXTXAYB”. Last characters match for the strings. So length of LCS can be written as: 
+L(“AGGTAB”, “GXTXAYB”) = 1 + L(“AGGTA”, “GXTXAY”) 
+- Consider the input strings “ABCDGH” and “AEDFHR. Last characters do not match for the strings. So length of LCS can be written as: 
+L(“ABCDGH”, “AEDFHR”) = MAX ( L(“ABCDG”, “AEDFHR”), L(“ABCDGH”, “AEDFH”) )
