@@ -197,7 +197,7 @@ Match the parentheses.
 - 只需在合并时计数当前合并的逆序数量，最后全部加起来
 - when arr1[0] > arr2[0]: count+=len(arr1) # arr1当前item>arr2当前item，意味着arr1后面的都大于arr2当前item, len是动态变化
 
-### 11. [Fist only one char](./Extra/first_only_one.py)
+### 11. [First only one char](./Extra/first_only_one.py)
 [来源: 剑指 Offer 50. 第一个只出现一次的字符](https://blog.algomooc.com/050.html)
 - very simple
 
@@ -229,6 +229,9 @@ Match the parentheses.
 [来源: 剑指 Offer 46. 把数字翻译成字符串](https://blog.algomooc.com/046.html)
 给定一个数字，我们按照如下规则把它翻译为字符串：0 翻译成 “a” ，1 翻译成 “b”，……，11 翻译成 “l”，……，25 翻译成 “z”。一个数字可能有多个翻译。请编程实现一个函数，用来计算一个数字有多少种不同的翻译方法。
 - dp list 记录前i个数字有多种翻译方法
+- 如果i-1和i的组合在10和25之间，说明翻译方法除了i本身，还要加上i-1: dp[i] = dp[i - 1] + dp[i - 2]
+- 不然dp[i]=dp[i-1]
+- 返回dp[-1]
 
 ### 2. m*n棋盘格，从(1,1)->(m,n)获取礼物的最大价值
 [来源: 剑指 Offer 47. 礼物的最大价值](https://blog.algomooc.com/047.html)
