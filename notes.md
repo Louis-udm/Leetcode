@@ -50,15 +50,15 @@ Given an array of integers, return indices of the two numbers such that they add
 - （3）重复（1）（2），直到左边索引无法再移动；
 - （4）维护一个结果res，每次用出现过的窗口大小来更新结果 res，最后返回 res 获取结果。
 
-更具体：mapSet记录(更新)遍历过程中各char最后一次出现的位置+1, 遍历的下一个char是否在mapSet中? 不在其中则窗口右侧(end指针)加一; 
-如果已在其中，说明这个char之前出现过，start = max(mapSet[s[end]], start)包含两种可能：
+更具体：mapSet记录(更新)遍历过程中的各char，值为最后一次出现的位置+1, 遍历的下一个char是否在mapSet中? 不在其中则窗口右侧(end指针)加一; 
+如果已在其中，说明这个char之前出现过，更新start = max(mapSet[s[end]], start)，这statement包含两种可能：
 1. 之前出现过并且在当前window中，start变为之前出现过的(位置+1)，相当于缩小window.
 2. 之前出现过但是没有在当前window，start不用变(但更新mapset中这个char的位置+1)
 ![NO.3](https://camo.githubusercontent.com/4d78fd6ac2ffe9559d2188efb0dd57a95f5aeb3c831653ce186777eb5ed298b9/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f76786137662e676966)
 
 ### [Leetcode NO.9 Palindrome Number](./1-100q/09.py)
 判断一个整数是否是回文数:
-loo循环, 每次num去头去尾. 去头num % 10 ** (l - i + 1), 去尾// 10 ** (i - 1), 然后比较num的头==尾(num // 10 ** (l - 1) == num % 10)
+loop循环, 每次num去头去尾. 去头num % 10 ** (l - i + 1), 去尾// 10 ** (i - 1), 然后比较num的头==尾(num // 10 ** (l - 1) == num % 10)
 ![](https://blog-1257126549.cos.ap-guangzhou.myqcloud.com/blog/v3tkl.gif)
 
 ### [Leetcode NO.53 Max sum of contiguous subarray](./1-100q/53.py) 
@@ -73,7 +73,7 @@ Given an integer array nums, find the contiguous subarray (containing at least o
 Given a list of positive integers (greater than 0), find the smallest missing one from the list range.
 Example: list = [2,4,6], your function will return 3, which will be the smallest one in this case.
 - min( set(list( range( min(l),max(l)+1 ) )) - set(l) )
-- 正常解法: 如果是已排序的array, 2分法比较中间item的值和index的大小：如果相等说明前面是连续的，则继续2分法找后面；如果大于，说明前面不连续，则继续2分法找前面。
+- 正常解法: 如果是已排序的array, 2分法比较中间item的值和index的大小：如果相等说明前面是连续的，则继续2分法找后面；如果大于，说明前面不连续，则继续2分法找前面，这时不需要管后面连续不连续。
 - [参考: 剑指 Offer 53 - II. 0～n-1中缺失的数字](https://blog.algomooc.com/0532.html)
 
 ### [2. Palindrome](./Extra/palindrome.py) 
@@ -155,7 +155,7 @@ Match the parentheses.
 - 两层循环，最外层遍历矩阵所有字符,针对每个匹配到str首字符的情况，进入下一层循环
 - 内层循环，根据str下一个字符（recursive方式）游走（上左下右），
 - 为了保证不重复访问节点，可以将这条路径上已经访问过的节点，修改为不在 str 当中的一个字符
-- 修改完后会出现一种情况，当前的节点元素与目标元素相匹配，但是在它的四个方向的节点中都找不到可以匹配到目标下一元素的节点。这时需要把这个点回退，根据之前的操作，当前的节点被修改为了 #，所以为了能够回退成功，再回退操作时需要重新将 # 修改回原来的元素。
+- 修改完后会出现一种情况，当前的节点元素与目标元素相匹配，但是在它的四个方向的节点中都找不到可以匹配到目标下一元素的节点。这时需要把这个点回退(recursive自动退回)，根据之前的操作，当前的节点被修改为了 #，所以为了能够回退成功，再回退操作前需要重新将 # 修改回原来的元素。
 
 ### 6. 调整数组顺序使奇数位于偶数前面
 [来源: 剑指 Offer 21. 调整数组顺序使奇数位于偶数前面](https://blog.algomooc.com/021.html)
