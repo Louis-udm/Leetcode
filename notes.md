@@ -105,6 +105,17 @@ Match the parentheses.
 - 所以使用一个同样长度的array记录"去除/留下"每个括号
 - 需要一个辅助stack，用于暂存左括号
 
+### [7. Merge two arrays](./Extra/merge_two_arrays.py) 
+Merge two sorted arrays, return the array with unique items.
+- simple
+
+### [8. Cutting woods](./Extra/cutting_woods.py) 
+We have n pieces of wood, with known lengths (integer array L). We need k pieces of wood with equal length. What's the maximum integer length?.
+- 笨办法: max_value=max(L)
+- 改进一点: max_value=sum(L) // k
+- 然后从max_value递减开始尝试
+  
+  
 ## 剑指 Offer
 ### 1. 找出数组中重复的数字
 [来源: 剑指 Offer 03. 数组中重复的数字](https://blog.algomooc.com/003.html)
