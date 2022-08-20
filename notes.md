@@ -110,11 +110,13 @@ Match the parentheses.
 Merge two sorted arrays, return the array with unique items.
 - simple
 
-### [8. Cutting woods](./Extra/cutting_woods.py) 
+### [8. Cut woods](./Extra/cutting_woods.py) 
+[Leetcode: cut woods](https://leetcode.com/discuss/interview-question/354854/)
 We have n pieces of wood, with known lengths (integer array L). We need k pieces of wood with equal length. What's the maximum integer length?.
 - 笨办法: max_value=max(L)
 - 改进一点: max_value=sum(L) // k
 - 然后从max_value递减开始尝试
+- 要使用2分法
 
 ### [9. Minimize heaviest first box](./Extra/minimize_heaviest_first_box.py)
 将一个integer array拆分为两个array，返回第一个array。
