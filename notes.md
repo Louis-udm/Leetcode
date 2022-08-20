@@ -114,8 +114,19 @@ We have n pieces of wood, with known lengths (integer array L). We need k pieces
 - 笨办法: max_value=max(L)
 - 改进一点: max_value=sum(L) // k
 - 然后从max_value递减开始尝试
-  
-  
+
+### [9. Minimize heaviest first box](./Extra/minimize_heaviest_first_box.py)
+将一个integer array拆分为两个array，返回第一个array。
+要求第一个array的sum大于第二个的同时个数最少。
+arr1和arr2不能有交集，并且完全划分原array
+- 要慎用python的一些函数，比如这里每次都用sum函数的话, 数量大的array就会超时
+- 从小到大排序，然后从最后一个元素开始遍历，查看每次分割，右边sum是不是大于左边sum
+
+### [10. Related group num](./Extra/related_group_num.py)
+一个nxn matrix表示row元素i是否有送东西给col元素j, 1表示送，0表示没有送, m[i,i]=1
+求联通子图个数 （就是有送东西关系的连接为一个子图)
+- 通过set(idx)开始, map[idx]->set, 扫描每行每列，不断合并set，最后set个数就是答案
+
 ## 剑指 Offer
 ### 1. 找出数组中重复的数字
 [来源: 剑指 Offer 03. 数组中重复的数字](https://blog.algomooc.com/003.html)
