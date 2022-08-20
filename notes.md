@@ -114,9 +114,12 @@ Merge two sorted arrays, return the array with unique items.
 [Leetcode: cut woods](https://leetcode.com/discuss/interview-question/354854/)
 We have n pieces of wood, with known lengths (integer array L). We need k pieces of wood with equal length. What's the maximum integer length?.
 - 笨办法: max_value=max(L)
-- 改进一点: max_value=sum(L) // k
-- 然后从max_value递减开始尝试
-- 要使用2分法
+- 改进一点: max_value=sum(L) // k , 然后从max_value递减开始尝试
+- 使用2分法: 
+- 原始2分法是, 给你一个数字，在一个有序数组中找到它的位置
+- 这里是递增有序数组[1..max_v], 你要找到满足一定条件的item, 并且可以根据条件值分两边再找
+- 当当前value的划分计数大于k时，说明要在右边找，如果小于则在左边找。
+- 这里对L从大到小排序会让平均复杂度降低
 
 ### [9. Minimize heaviest first box](./Extra/minimize_heaviest_first_box.py)
 将一个integer array拆分为两个array，返回第一个array。
