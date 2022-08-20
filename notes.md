@@ -126,7 +126,8 @@ arr1和arr2不能有交集，并且完全划分原array
 ### [10. Related group num](./Extra/related_group_num.py)
 一个nxn matrix表示row元素i是否有送东西给col元素j, 1表示送，0表示没有送, m[i,i]=1
 求联通子图个数 （就是有送东西关系的连接为一个子图)
-- 通过set(idx)开始, map[idx]->set, 扫描每行每列，不断合并set，最后set个数就是答案
+- 通过set(idx)开始, sets_map[idx]->init_set, 扫描每行每列，不断合并set，最后set个数就是答案
+- sets_map[i].update(sets[j]); sets_map[j]=sets_map[i];
 
 ## 剑指 Offer
 ### 1. 找出数组中重复的数字
