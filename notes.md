@@ -134,6 +134,23 @@ arr1和arr2不能有交集，并且完全划分原array
 - 通过set(idx)开始, sets_map[idx]->init_set, 扫描每行每列，不断合并set，最后set个数就是答案
 - sets_map[i].update(sets[j]); sets_map[j]=sets_map[i];
 
+### [11. Max exponential series length](./Extra/max_exponential_series.py)
+输入integer数组, 输出能形成[x1, x2=x1*x1, x3=x2*x2, ...], x_i in input arr 的这种数组的最大长度
+- 先排序，先形成map[item]=item
+- 遍历每个item，查cur*=cur 是否在map中，找出最大的count
+- 优化: 因为排过序，所以最外层loop的item如果曾经被count过，就直接跳过。
+
+### [12. Find total imbalance](./Extra/find_total_imbalance.py)
+Input integer array, all item are unique，
+找出所有连续sub-array（至少2个，并不打乱原始顺序）下，跳跃数量.
+example: [4,1,3,2], 
+all consecutive array = [ [4,1], [1,3], [3,2], [4,1,3], [1,3,2], [4,1,3,2] ]
+jump_count  =               1    + 1     + 0    + 1      + 0      + 0  = 3
+这里的跳跃数量指，某个数组在变成排序后，不连续的次数, 
+example: [4,1,3,2] -> [1,2,3,4] -> 0 jump; [4,1] -> [1,4] -> 1 jump.
+- 借鉴merge_sort, 循环做两两合并，合并的时候计算跳跃数；
+- 同merge_sort最大的区别，不能二分法
+
 ## 剑指 Offer
 ### 1. 找出数组中重复的数字
 [来源: 剑指 Offer 03. 数组中重复的数字](https://blog.algomooc.com/003.html)
