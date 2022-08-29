@@ -151,6 +151,13 @@ example: [4,1,3,2] -> [1,2,3,4] -> 0 jump; [4,1] -> [1,4] -> 1 jump.
 - 借鉴merge_sort, 循环做两两合并，合并的时候计算跳跃数；
 - 同merge_sort最大的区别，不能二分法
 
+### [13. Sum is closest to zero](./Extra/sum_closest_to_zero.py)
+An Array of integers is given, both +ve and -ve. You need to find the two elements such that their sum is closest to zero.
+For the below array, program should print -80 and 85.
+Solution:
+- 最重要的是先按绝对值排序
+- quicksort: O(nlogn)
+
 ## 剑指 Offer
 ### 1. 找出数组中重复的数字
 [来源: 剑指 Offer 03. 数组中重复的数字](https://blog.algomooc.com/003.html)
