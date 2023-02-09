@@ -50,10 +50,11 @@ def partition_traditional(array, left: int, right: int):
 def partition(array, begin, end):
     pivot = begin
     for i in range(begin + 1, end + 1):
+        # 注意i是同begin比(begin-value是基准值)，这写法的意思是，begin的那个值最终要放在pivot的位置，
+        # 使得left < begin-value (pivot position) < right
         if array[i] <= array[begin]:
-            pivot += 1 
-            # 这种写法的意思: 移动基准点，使得左边的都<=基准点都值,
-            # 为什么是先右移pivot再互换，因为pivot会指向最后真正放基准值的地方,
+            pivot += 1
+            # 所以只要发现i比begin小，都移到left (这个left先不算begin位置)
             # loop中最后一个被互换到pivot暂存的小于基准的值，退出loop后会真正同begin互换
             # 这样begin就真正到了pivot的地方
             array[i], array[pivot] = array[pivot], array[i]
@@ -68,8 +69,8 @@ def quicksort(array, begin=0, end=None):
     def _quicksort(array, begin, end):
         if begin >= end:
             return
-        # pivot = partition(array, begin, end)
-        pivot = partition_traditional(array, begin, end)
+        pivot = partition(array, begin, end)
+        # pivot = partition_traditional(array, begin, end)
         _quicksort(array, begin, pivot - 1)
         _quicksort(array, pivot + 1, end)
 
@@ -79,6 +80,6 @@ def quicksort(array, begin=0, end=None):
 array = [97, 200, 100, 101, 211, 107]
 quicksort(array)
 print(array)
-array = [97, 200, 211, 100, 100, 211, 107,1]
+array = [97, 200, 211, 100, 100, 211, 107, 1]
 quicksort(array)
 print(array)
