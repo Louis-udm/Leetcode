@@ -66,6 +66,8 @@ def is_palindrome_int(num: int) -> bool:
         i += 1
 
 
+print(is_palindrome_int(123322))
+
 print(is_palindrome_int(12353721))
 print(is_palindrome_int(1235321))
 print(is_palindrome_int(123321))

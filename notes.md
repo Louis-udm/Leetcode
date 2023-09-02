@@ -44,7 +44,7 @@ Given an array of integers, return indices of the two numbers such that they add
 ![NO.2](https://camo.githubusercontent.com/56a78d49fe71daeb64a888d5167e0e924127f94ff670c48871825ce634c38820/68747470733a2f2f626c6f672d313235373132363534392e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f626c6f672f667a3933332e676966)
 
 ### [Leetcode NO.3 Longest Substring Without Repeating Characters](./1-100q/03.py) 给定一个字符串，请你找出其中不含有重复字符的 **最长子串** 的长度。
-建立一个256位大小的整型数组 freg ，用来建立字符和其出现位置之间的映射。维护一个滑动窗口，窗口内的都是没有重复的字符，去尽可能的扩大窗口的大小，窗口不停的向右滑动。
+建立一个256位大小的整型数组 freg (python为map)，用来建立字符和其出现位置之间的映射。维护一个滑动窗口，窗口内的都是没有重复的字符，去尽可能的扩大窗口的大小，窗口不停的向右滑动。
 - （1）如果当前遍历到的字符从未出现过，那么直接扩大右边界；
 - （2）如果当前遍历到的字符出现过，则缩小窗口（左边索引向右移动），然后继续观察当前遍历到的字符；
 - （3）重复（1）（2），直到左边索引无法再移动；
@@ -62,7 +62,7 @@ loop循环, 每次num去头去尾. 去头num % 10 ** (l - i + 1), 去尾// 10 **
 ![](https://blog-1257126549.cos.ap-guangzhou.myqcloud.com/blog/v3tkl.gif)
 
 ### [Leetcode NO.53 Max sum of contiguous subarray](./1-100q/53.py) 
-[参考: 剑指 Offer 42. 连续子数组的最大和](https://blog.algomooc.com/042.html)
+[参考: 剑指 Offer 42. 最大和的连续子数组](https://blog.algomooc.com/042.html)
 Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 - 可以这样理解：遍历每个item, 对于当前item，前面的sum是不是当前item的累赘(就是前面的sum是不是>0),
 - 如果前面的sum<0，那就舍弃前面的sum，新的sum从当前item开始. 可以保留每移动一步新update后的sum，然后max(list_of_sums)
