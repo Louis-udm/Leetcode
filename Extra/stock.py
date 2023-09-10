@@ -31,3 +31,5 @@ def maxProfit_better(prices):
 
 print(maxProfit_better([34,6,5,4,3]))
 print(maxProfit_better([1,6,5,4,34,3]))
+print(maxProfit_better([180,200, 2,3,3,2,10,3,30,2,3,20])) #28
+print(maxProfit_better([20,40, 2,3,3,2,10,3,30,2,3,20])) #28

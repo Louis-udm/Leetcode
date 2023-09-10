@@ -75,3 +75,18 @@ import timeit
 
 print(timeit.timeit(s1, number=10000))
 print(timeit.timeit(s2, number=10000))
+
+"""
+int to char list
+"""
+
+a =20038485703
+b=[]
+i=1
+while True:
+    b.append(a%(10**i)//(10**(i-1)))
+    if a/(10**i)<1:
+        break
+    i+=1
+print(b)
+assert list(map(int,list(str(a))))==list(reversed(b))
