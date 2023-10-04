@@ -18,7 +18,17 @@ def maxProfit(prices):
 print(maxProfit([34,6,5,4,3]))
 print(maxProfit([1,6,5,4,34,3]))
 
-def maxProfit_better(prices):
+def maxProfit_better(values:list):
+    # write your python code here
+    init_diff = 0
+    for i, x1 in enumerate(values[:-1]):
+      x2 = max(values[i+1:])
+      diff = x2 - x1
+      if diff > init_diff:
+        init_diff = diff
+    return init_diff
+
+def maxProfit_best(prices):
     buy=prices[0]
     profit=0
     for p in prices:
@@ -29,7 +39,7 @@ def maxProfit_better(prices):
     return profit
 
 
-print(maxProfit_better([34,6,5,4,3]))
-print(maxProfit_better([1,6,5,4,34,3]))
-print(maxProfit_better([180,200, 2,3,3,2,10,3,30,2,3,20])) #28
-print(maxProfit_better([20,40, 2,3,3,2,10,3,30,2,3,20])) #28
+print(maxProfit_best([34,6,5,4,3]))
+print(maxProfit_best([1,6,5,4,34,3]))
+print(maxProfit_best([180,200, 2,3,3,2,10,3,30,2,3,20])) #28
+print(maxProfit_best([20,40, 2,3,3,2,10,3,30,2,3,20])) #28
