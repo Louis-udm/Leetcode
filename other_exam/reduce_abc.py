@@ -49,6 +49,18 @@ def reduce_abc(strParam):
   
   return reduce_str(strParam)
 
+# chatgpt version is wrong
+def reduce_abc2(str):
+    # Define a function to check if reduction is possible
+    def can_reduce(s):
+        return 'ab' in s or 'bc' in s or 'ca' in s
+
+    # Continue reducing the string until no more reductions are possible
+    while can_reduce(str):
+        str = str.replace('ab', 'c').replace('bc', 'a').replace('ca', 'b')
+
+    # Return the length of the final reduced string
+    return len(str)
 
 print(reduce_abc("abcabc"))
 print(reduce_abc("cccc"))
