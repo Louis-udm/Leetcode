@@ -11,14 +11,15 @@
 def balance(s:str):
     # 注意这个题目不是为了做演算并得出结果，而是为了检查并去除多余的括号
     # 所以使用一个同样长度的array记录"去除/留下"每个括号
-    res=[0]*len(s)
+    res=[0]*len(s) # 0: remove (多余的括号), 1: keep (正确的括号以及其他字符)
     # stack辅助，用于暂存(
     stack=[]
     for i,c in enumerate(s):
         if c not in (')','('):
             res[i]=1
         if c==')' and len(stack)>0:
-            res[stack.pop()]=1
+            left_previous_ind=stack.pop()
+            res[left_previous_ind]=1
             res[i]=1
         if c=='(':
             stack.append(i)

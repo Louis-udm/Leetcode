@@ -5,7 +5,7 @@ class Node:
         self.data = val
 
 
-def binary_insert(root, node):
+def binary_insert(root: Node|None, node: Node):
     if root is None:
         root = node
     else:
@@ -36,6 +36,18 @@ def pre_order_print(root):
     pre_order_print(root.l_child)
     pre_order_print(root.r_child)
 
+# 层次遍历, 广度优先搜索
+def breadth_travel(root):
+    if not root:
+        return
+    q = [root]
+    while q:
+        node = q.pop(0)
+        print(node.data)
+        if node.l_child:
+            q.append(node.l_child)
+        if node.r_child:
+            q.append(node.r_child)
 
 r = Node(3)
 binary_insert(r, Node(7))

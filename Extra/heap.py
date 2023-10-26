@@ -1,6 +1,9 @@
 """Heap
 
 https://nemo.cool/254.html
+https://www.tutorialspoint.com/python_data_structure/python_heaps.htm
+
+堆 (heap) 是一种经过排序的完全二叉树，其中任一非叶子节点的值均不大于（或不小于）其左孩子和右孩子节点的值。
 """
 
 
@@ -14,6 +17,8 @@ class heap(object):
         if index == 0 or index > len(self.data_list) - 1:
             return None
         else:
+            # 右移一位，相当于除以2。因为是从0开始的，所以要减1再除以2
+            # 因为堆是完全二叉树，任何父节点到子节点的中间的节点的数量刚好是父节点序号的数量+1/+2
             return (index - 1) >> 1
 
     def swap(self, index_a, index_b):
@@ -59,13 +64,17 @@ class heap(object):
                 and self.data_list[2 * index + 1]
                 > self.data_list[maxvalue_index]
             ):
+                # 左子节点大于父节点，标记最大值的下标为左子节点的下标
                 maxvalue_index = 2 * index + 1
+
             if (
                 2 * index + 2 <= total_index
                 and self.data_list[2 * index + 2]
                 > self.data_list[maxvalue_index]
             ):
+                # 右子节点大于父节点，标记最大值的下标为右子节点的下标
                 maxvalue_index = 2 * index + 2
+
             if maxvalue_index == index:
                 break
             self.swap(index, maxvalue_index)
@@ -76,5 +85,6 @@ if __name__ == "__main__":
     myheap = heap()
     for i in range(10):
         myheap.insert(i + 1)
-    print("建堆:", myheap.data_list)
-    print("删除堆顶元素:", [myheap.removeMax() for _ in range(10)])
+    print("建堆:", myheap.data_list) # [10, 9, 6, 8, 7, 2, 5, 1, 4, 3]
+    print(myheap.get_parent_index(2))
+    print("删除堆顶元素:", [myheap.removeMax() for _ in range(10)]) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]

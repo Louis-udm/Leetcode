@@ -1,4 +1,5 @@
 # Notices
+> 如果找不到好的方法，要马上转入做 brute force solution
 
 * [剑指 Offer](https://blog.algomooc.com/)(java, 题目不完全同leetcode对应) 
 * [java leetcode中文](https://github.com/MisterBooo/LeetCodeAnimation)
@@ -29,6 +30,22 @@
 
 # Questions:
 前几道经典题的动画解析: https://github.com/MisterBooo/LeetCodeAnimation
+
+## Extra
+### 202306
+[stock profits](./Extra/202306/stock.py)
+### 202309
+[reduce_abc.py](./Extra/202309/reduce_abc.py)
+[cache_fibonacci.py](./Extra/202309/cache_fibonacci.py)
+[simple torch gradient](./Extra/202309/simple_torch.py)
+[use argparse](./Extra/202309/use_argparse.py)
+### 202310
+[56_merge_intervals.py](./Extra/202310/56_merge_intervals.py)
+[987_vertical_order_traversal_bt.py](./Extra/202310/987_vertical_order_traversal_bt.py)
+[1265_Print_Immutable_Linked-List_in_Reverse.py](./Extra/202310/1265_Print_Immutable_Linked-List_in_Reverse.py)
+
+## Finance
+[Calculate compound rate](./Finance/calculate_compound_rate.py)
 
 ## Leetcode
 ### [Leetcode NO.1 TwoSum](./1-100q/01_TwoSum.py)
