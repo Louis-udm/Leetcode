@@ -1,3 +1,4 @@
+# Also Meta question
 # Cutting woods
 # We have n pieces of wood, with known lengths (integer array L). We need k pieces of wood with equal length. What's the maximum integer length?
 
@@ -99,15 +100,15 @@ def cutting_woods_binary_search_better(L: list, k):
     # 这里对L从大到小排序会让平均复杂度降低
     s = sum(L)
     if s < k:
-        return 0, 0
+        return 0, 0 # total loop, max_v
     max_v = s // k
     if max_v == 1:
-        return 0, 1
+        return 0, 1 # total loop, max_v
     min_v=1
     cur_v = max_v // 2
     count = 0
     total_loop = 0
-    L = sorted(L, reverse=True)
+    L = sorted(L, reverse=True) # O(nlogn), better
     while True:
         for l in L:
             count += l // cur_v

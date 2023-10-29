@@ -48,15 +48,19 @@ def partition_traditional(array, left: int, right: int):
 
 
 def partition(array, begin, end):
+    # 注意begin指针一直不变，loop中移动的是i和pivot指针
+    # begin的值就是基准值，这个基准值在loop结束后要移动到正确的位置(pivot)。
+    # 循环开始时,pivot指针指向begin，i指针指向begin+1.
+    # loop过程中，pivot指针的作用是指定最后一个小于基准的值(begin)的位置
+    # loop过程中，i值同begin值比较，如果i值小于begin值，pivot指针+1，然后i值和pivot指针的值互换
+    # 换了以后，pivot指定的位置和它前面的位置的值都是小于基准(begin)的值
+    # loop结束后，pivot和begin的值互换，这样基准值就到了正确的位置
     pivot = begin
     for i in range(begin + 1, end + 1):
-        # 注意i是同begin比(begin-value是基准值)，这写法的意思是，begin的那个值最终要放在pivot的位置，
-        # 使得left < begin-value (pivot position) < right
+        # 注意i是同begin比(begin-value是基准值)，begin指针是不动的。
+        # 这写法的意思是，begin的那个值最终要放在pivot的位置
         if array[i] <= array[begin]:
             pivot += 1
-            # 所以只要发现i比begin小，都移到left (这个left先不算begin位置)
-            # loop中最后一个被互换到pivot暂存的小于基准的值，退出loop后会真正同begin互换
-            # 这样begin就真正到了pivot的地方
             array[i], array[pivot] = array[pivot], array[i]
     array[pivot], array[begin] = array[begin], array[pivot]
     return pivot

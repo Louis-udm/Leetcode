@@ -91,7 +91,7 @@ Given a list of positive integers (greater than 0), find the smallest missing on
 Example: list = [2,4,6], your function will return 3, which will be the smallest one in this case.
 - min( set(list( range( min(l),max(l)+1 ) )) - set(l) )
 - 正常解法1: 如果是已排序的array, 2分法比较中间item的值和index的大小：如果相等说明前面是连续的，则继续2分法找后面；如果大于，说明前面不连续，则继续2分法找前面，这时不需要管后面连续不连续。
-- 正常解法2: 如果是未排序的array, 参考quick sort, 在每次完成pivot排序后，判断pivot的值和它的index，如果value==index+1，则去右边找，不然左边找。
+- 正常解法2: 如果是未排序的array, 参考quick sort, 在每次完成pivot排序后，判断pivot的值和它的index，如果value==index+1则说明左边正常，要去右边找，不然左边找。
 - [参考: 剑指 Offer 53 - II. 0～n-1中缺失的数字](https://blog.algomooc.com/0532.html)
 
 ### [2. Palindrome](./Extra/palindrome.py) 
@@ -130,7 +130,7 @@ Merge two sorted arrays, return the array with unique items.
 ### [8. Cut woods](./Extra/cutting_woods.py) 
 [Leetcode: cut woods](https://leetcode.com/discuss/interview-question/354854/)
 We have n pieces of wood, with known lengths (integer array L). We need k pieces of wood with equal length. What's the maximum integer length?.
-- 笨办法: max_value=max(L)
+- 笨办法: max_value=max(L), 然后开始O(n^2) loop, max_value递减，看能不能达到k个
 - 改进一点: max_value=sum(L) // k , 然后从max_value递减开始尝试
 - 使用2分法: 
 - 原始2分法是, 给你一个数字，在一个有序数组中找到它的位置
