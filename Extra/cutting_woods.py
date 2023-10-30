@@ -1,4 +1,4 @@
-# Also Meta question
+# Also facebook question
 # Cutting woods
 # We have n pieces of wood, with known lengths (integer array L). We need k pieces of wood with equal length. What's the maximum integer length?
 

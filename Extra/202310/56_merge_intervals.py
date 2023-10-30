@@ -1,8 +1,8 @@
 # https://leetcode.com/problems/merge-intervals/
 # Sort O(Nlog(N))
 
-# simiar meta question:
-# https://leetcode.com/discuss/interview-question/1675826/meta-e4e5-onsite
+# simiar facebook question:
+# https://leetcode.com/discuss/interview-question/1675826/facebook-e4e5-onsite
 # Given two lists of sorted, disjoint intervals, merge them to find their union.
 # Follow up: K-many lists. ((sum elements) * log(K) solution is optimal)
 

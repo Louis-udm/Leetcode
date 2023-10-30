@@ -1,4 +1,4 @@
-# It's also Meta interview question
+# It's also facebook interview question
 
 # You are given an immutable linked list, print out all values of each node in reverse with the help of the following interface:
 # ImmutableListNode: An interface of immutable linked list, you are given the head of the list.
