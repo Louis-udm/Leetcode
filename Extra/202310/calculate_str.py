@@ -6,6 +6,7 @@
 # [1,2,3] -> 1
 # [3,2,1] ->1
 # [6,2,3,4,3,2,1] -> 2
+# Solution: linear search, is it possible for binary search?
 
 
 # 2. calculate a string with only numbers and addition and multiplication
