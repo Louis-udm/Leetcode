@@ -144,6 +144,7 @@ We have n pieces of wood, with known lengths (integer array L). We need k pieces
 arr1和arr2不能有交集，并且完全划分原array
 - 要慎用python的一些函数，比如这里每次都用sum函数的话, 数量大的array就会超时
 - 从小到大排序，然后从最后一个元素开始遍历，查看每次分割，右边sum是不是大于左边sum
+- 排序后可以使用二分法
 
 ### [10. Related group num](./Extra/related_group_num.py)
 一个nxn matrix表示row元素i是否有送东西给col元素j, 1表示送，0表示没有送, m[i,i]=1
